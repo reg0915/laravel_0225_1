@@ -1,9 +1,9 @@
 <?php
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class StudentController extends Controller
+use Illuminate\Http\Request;
+
+class TestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -11,24 +11,7 @@ class StudentController extends Controller
     public function index()
     {
 
-        // $data = [
-        //     [
-        //         'id'   => 1,
-        //         'name' => 'amy',
-        //     ],
-        //     [
-        //         'id'   => 2,
-        //         'name' => 'bob',
-        //     ],
-        //     [
-        //         'id'   => 3,
-        //         'name' => 'kavin',
-        //     ],
-
-        // ];
-        $data = DB::table('students')->get();
-        // dd($data);
-        return view('student.index', ['data' => $data]);
+        return view('test.index');
         //
     }
 
@@ -38,8 +21,8 @@ class StudentController extends Controller
     public function create()
     {
 
-        // dd('123');
-        // return view('student.index', ['data' => $data]);
+        dd('123');
+        return view('test.index');
 
         //
     }

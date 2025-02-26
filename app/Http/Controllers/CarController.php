@@ -1,35 +1,38 @@
 <?php
-namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class StudentController extends Controller
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class CarController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        //抓全部資料
+    $data=[
+        [
+            'id'=>1,
+            'name'=>'台北市',
+            'rank'=>'a1'
+        ],
+        [
+            'id'=>1,
+            'name'=>'台中市',
+            'rank'=>'a2'
+        ],
+        [
+            'id'=>1,
+            'name'=>'台南市',
+            'rank'=>'a3'
+        ]
+];
+// dd($data);
 
-        // $data = [
-        //     [
-        //         'id'   => 1,
-        //         'name' => 'amy',
-        //     ],
-        //     [
-        //         'id'   => 2,
-        //         'name' => 'bob',
-        //     ],
-        //     [
-        //         'id'   => 3,
-        //         'name' => 'kavin',
-        //     ],
-
-        // ];
-        $data = DB::table('students')->get();
-        // dd($data);
-        return view('student.index', ['data' => $data]);
-        //
+    return view('car.index',['data'=>$data]);
+    // return view('car.index');
     }
 
     /**
@@ -37,11 +40,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-
-        // dd('123');
-        // return view('student.index', ['data' => $data]);
-
         //
+        return view('car.create');
     }
 
     /**
@@ -81,15 +81,6 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
-    }
-
-    public function del()
-    {
-
-        dd('del');
-        return view('student.create');
-
         //
     }
 }
